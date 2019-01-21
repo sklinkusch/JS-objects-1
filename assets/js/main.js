@@ -1,8 +1,13 @@
 function listAllMethods(obj) {
-  console.log(obj);
-  Object.getOwnPropertyNames(obj).forEach(property => {
-    console.log(property);
+  let association;
+  let MyMethodArray = Object.getOwnPropertyNames(obj);
+  let MyFilteredArray = MyMethodArray.filter(function(element) {
+    association = obj[element];
+    if (typeof association != "number") {
+      console.log(element);
+    }
   });
 }
 listAllMethods(Array);
 listAllMethods(Math);
+listAllMethods(String);
